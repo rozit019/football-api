@@ -9,12 +9,11 @@ dotenv.config();
 
 const app = express();
 
-// CORS - update with your future Vercel URL
 const corsOptions = {
   origin: [
     "http://localhost:5173",
     "https://localhost:5173",
-    // We'll add Vercel URL after frontend deploy
+    "https://samayenepali.vercel.app",
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
