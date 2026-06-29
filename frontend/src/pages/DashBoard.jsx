@@ -5,7 +5,7 @@ import {
   fetchTodayGames,
   fetchLiveGames,
 } from "../services/gameService";
-import "./Dashboard.css";
+import "./DashBoard.css";
 
 function Dashboard() {
   const [games, setGames] = useState([]);
