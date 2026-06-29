@@ -9,12 +9,23 @@ dotenv.config();
 
 const app = express();
 
+// backend/server.js
 const corsOptions = {
-  origin: [
-    "http://localhost:5173",
-    "https://localhost:5173",
-    "https://samayenepali.vercel.app",
-  ],
+  origin: (origin, callback) => {
+    // Allow localhost and any vercel.app domain
+    const allowedOrigins = ["http://localhost:5173", "https://localhost:5173"];
+
+    // Check if origin ends with vercel.app or is in allowed list
+    if (
+      !origin ||
+      allowedOrigins.includes(origin) ||
+      origin.endsWith("vercel.app")
+    ) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"],
