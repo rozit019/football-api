@@ -1,4 +1,4 @@
-const API_URL = "/api";
+const API_URL = "https://web-production-12ce1.up.railway.app/api";
 
 export const fetchGames = async (params = {}) => {
   const query = new URLSearchParams(params).toString();
