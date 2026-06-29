@@ -1,5 +1,5 @@
 import React from "react";
-import Dashboard from "./pages/Dashboard.jsx";
+import Dashboard from "./pages/DashBoard.jsx";
 import "./App.css";
 
 function App() {
